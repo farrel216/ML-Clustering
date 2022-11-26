@@ -13,6 +13,7 @@ function showResult(){
     var name = document.getElementById("name").value;
     var sleeping = document.getElementById('sleeping-hours').value;
     var heart = document.getElementById('avg-hr').value;
+    if(name != "" && sleeping != "" && heart != ""){
     //set url and inner
     var url = "/hasil";
     //alert (url);
@@ -22,10 +23,16 @@ function showResult(){
     xmlhttp.open('POST' , url, true);
     xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
     xmlhttp.onreadystatechange = function(){
+        document.getElementById(inner).innerHTML = '<img src="static/img/ajax_loader.png"/>';
         if ((xmlhttp.readyState == 4) && (xmlhttp.status == 200)){
             document.getElementById(inner).innerHTML = xmlhttp.responseText;
         }
         return false;
     }
+    
     xmlhttp.send(params);
   }
+  else{
+    alert("Isi seluruh data");
+  }
+}
