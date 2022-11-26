@@ -5,8 +5,6 @@ import pickle
 
 app = Flask(__name__)
 
-model = pickle.load(open("../model/model.pkl", "rb"))
-
 @app.route('/')
 @app.route('/index')
 def index():
@@ -16,7 +14,7 @@ def index():
 def ValuePredictor(to_predict_list):
     to_predict = np.array(to_predict_list).reshape(1, 2)
     loaded_model = pickle.load(
-        open(model))  # load the model
+        open("./model/model.pkl", "rb"))  # load the model
     # predict the values using loded model
     result = loaded_model.predict(to_predict)
     return result[0]
@@ -33,11 +31,11 @@ def hasil():
         to_predict_list = list(map(float, [sunshine, work]))
         result = ValuePredictor(to_predict_list)
         if int(result) == 2:
-            prediction = text + '\nSo your city have a healthy lifestyle'
+            prediction = text + 'So your city have a healthy lifestyle'
         elif int(result) == 1:
-            prediction = text + '\nSo your city have a normal lifestyle'
+            prediction = text + 'So your city have a normal lifestyle'
         else:
-            prediction = text + '\nSo your city have a bad lifestyle'
+            prediction = text + 'So your city have a bad lifestyle'
 
         return flask.render_template("index.html", prediction=prediction)
 if __name__ == "__main__":
