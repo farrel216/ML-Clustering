@@ -16,17 +16,13 @@ community that make adding new functionality easy.
 .. _Werkzeug: https://werkzeug.palletsprojects.com/
 .. _Jinja: https://jinja.palletsprojects.com/
 
-
-Installing
+Cara Run
 ----------
+1. git clone https://github.com/farrel216/ML-Clustering.git
+2. "virtualenv venv"
+3. "pip install flask"
+4. "flask run"
 
-Install and update using `pip`_:
-
-.. code-block:: text
-
-    $ pip install -U Flask
-
-.. _pip: https://pip.pypa.io/en/stable/getting-started/
 
 
 A Simple Example
