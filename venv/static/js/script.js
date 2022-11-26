@@ -23,7 +23,7 @@ function showResult(){
     xmlhttp.open('POST' , url, true);
     xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
     xmlhttp.onreadystatechange = function(){
-        document.getElementById(inner).innerHTML = '<img src="static/img/ajax_loader.png"/>';
+        document.getElementById(inner).innerHTML = 'Loading....';
         if ((xmlhttp.readyState == 4) && (xmlhttp.status == 200)){
             document.getElementById(inner).innerHTML = xmlhttp.responseText;
         }
