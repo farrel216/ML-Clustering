@@ -1,3 +1,15 @@
+# Clustering Flask
+**Clustering**
+
+### Anggota
+Nama  | NIM
+------------- | -------------
+Farrel Andhika Rizky Putra  | 24060120130071	  
+M. Khoirul Ma'arif  | 24060120130116
+Mohamad Fahrul Islami | 24060120130074
+Dewangga Azharani Azhar | 24060120130068
+Ksatria Akbar | NIM
+
 Flask
 =====
 
@@ -19,9 +31,16 @@ community that make adding new functionality easy.
 Cara Run
 ----------
 1. git clone https://github.com/farrel216/ML-Clustering.git
-2. "virtualenv venv"
-3. "pip install flask"
-4. "flask run"
+2. pip install virtualenv
+3. virtualenv venv
+4. set FLASK_APP=app.py
+5. set FLASK_ENV=development
+6. venv\Scripts\activate
+7. pip install flask
+8. pip install numpy
+9. pip install -U scikit-learn
+10. flask run
+11. buka http://127.0.0.1:5000 pada browser
 
 
 
