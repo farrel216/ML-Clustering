@@ -32,7 +32,7 @@ def hasil():
         result = ValuePredictor(to_predict_list)
         if int(result) == 2:
             prediction = nama + ' have a healthy lifestyle'
-        elif int(result) == 1:
+        elif int(result) == 0:
             prediction = nama + ' have a normal lifestyle'
         else:
             prediction = nama + '  have a bad lifestyle'
