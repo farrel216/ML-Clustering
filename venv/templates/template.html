@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Clustering Data</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static',filename='styles/style.css') }}"
+    />
+  </head>
+  <body>
+    <!-- Start Page Title Area -->
+    <div class="page-title-area">
+      <div class="container-fluid">
+        <div class="row align-items-center">
+          <div class="col-lg-6 col-sm-6">
+            <div class="page-title">
+              <h3>Clustering Data</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Page Title Area -->
+
+    <!-- Start Contact Us Area -->
+    <div class="contact-us-area">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-8">
+            <div class="contact-form">
+              <form id="contactForm">
+                <div class="form-group">
+                  <label for="name" class="form-label">Nama</label>
+                  <input
+                    type="text"
+                    name="name"
+                    class="form-control item"
+                    id="name"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="sleeping-hours"
+                    >Lama Tidur (Jam)</label
+                  >
+                  <input
+                    type="text"
+                    name="sleeping-hours"
+                    class="form-control item"
+                    id="sleeping-hours"
+                  />
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="avg-hr"
+                    >Rata-Rata Detak Jantung per Menit</label
+                  >
+                  <input
+                    type="text"
+                    name="avg-hr"
+                    class="form-control item"
+                    id="avg-hr"
+                  />
+                </div>
+
+                <button
+                  type="button"
+                  class="default-btn btn-block"
+                  onclick="showResult()"
+                >
+                  Predict
+                </button>
+              </form>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="contact-info-wrap">
+              <div class="single-contact-info">
+                <h3>Hasil Prediksi</h3>
+
+                <div class="contact-info-content">
+                  <p id="prediction_result"></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Contact Us Area -->
+    <script
+      type="text/javascript"
+      src="https://code.jquery.com/jquery-3.2.1.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"
+    ></script>
+    <script src="{{ url_for('static',filename='js/script.js') }}"></script>
+  </body>
+</html>
