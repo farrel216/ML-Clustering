@@ -23,19 +23,19 @@ def ValuePredictor(to_predict_list):
 def hasil():
     if request.method == 'POST':
         nama = request.form['name']
-        sunshine = request.form['sunshine-hour']
-        work = request.form['work-hour']
+        sleep = request.form['sleeping-hours']
+        heart = request.form['avg-hr']
 
         # text = nama + ", your city have " + sunshine + " hours of sunshine per day and " + work + " hours of work per day will make you happy."
 
-        to_predict_list = list(map(float, [sunshine, work]))
+        to_predict_list = list(map(float, [sleep, heart]))
         result = ValuePredictor(to_predict_list)
-        if int(result) == 2:
-            prediction = nama + ' have a healthy lifestyle'
-        elif int(result) == 0:
-            prediction = nama + ' have a normal lifestyle'
+        if int(result) == 1:
+            prediction = nama + ', stress level kamu rendah. Bagus, kamu bisa bekerja dengan tenang dan produktif. Tetap semangat ya!'
+        elif int(result) == 2:
+            prediction = nama + ', stress level kamu medium. Kamu bisa tetap produktif dan tenang, tapi jangan lupa untuk mengambil waktu untuk diri sendiri.'
         else:
-            prediction = nama + '  have a bad lifestyle'
+            prediction = nama + ', stress level kamu tinggi. Kamu harus lebih berhati-hati dalam menjalani kehidupan sehari-hari. Jangan lupa untuk mengambil waktu untuk diri sendiri.'
 
         return prediction
 if __name__ == "__main__":

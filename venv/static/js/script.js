@@ -11,14 +11,14 @@ function showResult(){
     var xmlhttp = getXMLHttpRequest();
     //get input value
     var name = document.getElementById("name").value;
-    var sunshine = document.getElementById('sunshine-hour').value;
-    var work = document.getElementById('work-hour').value;
+    var sleeping = document.getElementById('sleeping-hours').value;
+    var heart = document.getElementById('avg-hr').value;
     //set url and inner
     var url = "/hasil";
     //alert (url);
     var inner = "prediction_result";
     //open request
-    var params = "name="+ name + "&sunshine-hour=" + sunshine + "&work-hour=" + work;
+    var params = "name="+ name + "&sleeping-hours=" + sleeping + "&avg-hr=" + heart;
     xmlhttp.open('POST' , url, true);
     xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
     xmlhttp.onreadystatechange = function(){
