@@ -5,7 +5,7 @@ import pickle
 
 app = Flask(__name__)
 
-model = pickle.load(open("model.pkl", "rb"))
+model = pickle.load(open("../model/model.pkl", "rb"))
 
 @app.route('/')
 @app.route('/index')
@@ -39,7 +39,6 @@ def hasil():
         else:
             prediction = text + '\nSo your city have a bad lifestyle'
 
-        return render_template("index.html", prediction=prediction)
-
+        return flask.render_template("index.html", prediction=prediction)
 if __name__ == "__main__":
     app.run(debug=False)  # use debug = False for jupyter notebook
