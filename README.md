@@ -1,5 +1,5 @@
 # Clustering Flask
-**Clustering**
+
 
 ### Anggota
 Nama  | NIM
@@ -8,7 +8,7 @@ Farrel Andhika Rizky Putra  | 24060120130071
 M. Khoirul Ma'arif  | 24060120130116
 Mohamad Fahrul Islami | 24060120130074
 Dewangga Azharani Azhar | 24060120130068
-Ksatria Akbar | NIM
+Ksatria Akbar Putra Pratama | 24060120130119
 
 Flask
 =====
@@ -41,8 +41,6 @@ Cara Run
 9. pip install -U scikit-learn
 10. flask run
 11. buka http://127.0.0.1:5000 pada browser
-
-
 
 A Simple Example
 ----------------
