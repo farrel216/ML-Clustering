@@ -20,7 +20,7 @@
   </head>
   <body>
     <div class="registration-form">
-      <form action="/hasil" method="POST">
+      <form action="" method="POST">
         <div class="form-group">
           <label for="name" class="form-label">Name</label>
           <input
@@ -47,18 +47,18 @@
             type="text"
             name="work-hour"
             class="form-control item"
-            id="avg-work"
+            id="work-hour"
             placeholder="Average Work"
           />
         </div>
         <div class="form-group">
-          <button type="submit" class="btn btn-block create-account">
+          <button type="button" onclick="showResult()" class="btn btn-block create-account">
             Submit
           </button>
         </div>
         <div class="form-group">
             <h3>Hasil Prediksi:</h3>
-            <h5>{{prediction}}</h5>
+            <h5 id="prediction_result"></h5>
         </div>
     </form>
     </div>

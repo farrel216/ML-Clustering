@@ -26,17 +26,17 @@ def hasil():
         sunshine = request.form['sunshine-hour']
         work = request.form['work-hour']
 
-        text = nama + ", your city have " + sunshine + " hours of sunshine per day and " + work + " hours of work per day will make you happy."
+        # text = nama + ", your city have " + sunshine + " hours of sunshine per day and " + work + " hours of work per day will make you happy."
 
         to_predict_list = list(map(float, [sunshine, work]))
         result = ValuePredictor(to_predict_list)
         if int(result) == 2:
-            prediction = text + 'So your city have a healthy lifestyle'
+            prediction = nama + ' have a healthy lifestyle'
         elif int(result) == 1:
-            prediction = text + 'So your city have a normal lifestyle'
+            prediction = nama + ' have a normal lifestyle'
         else:
-            prediction = text + 'So your city have a bad lifestyle'
+            prediction = nama + '  have a bad lifestyle'
 
-        return flask.render_template("index.html", prediction=prediction)
+        return prediction
 if __name__ == "__main__":
     app.run(debug=False)  # use debug = False for jupyter notebook
