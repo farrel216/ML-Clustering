@@ -1,5 +1,6 @@
 # Clustering Flask
 
+
 ### Anggota
 Nama  | NIM
 ------------- | -------------
@@ -40,7 +41,6 @@ Cara Run
 9. pip install -U scikit-learn
 10. flask run
 11. buka http://127.0.0.1:5000 pada browser
-
 
 A Simple Example
 ----------------
