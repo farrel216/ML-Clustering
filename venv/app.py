@@ -12,7 +12,7 @@ def index():
 
 # prediction function
 def ValuePredictor(to_predict_list):
-    to_predict = np.array(to_predict_list).reshape(1, 2)
+    to_predict = np.array(to_predict_list).reshape(1, 3)
     loaded_model = pickle.load(
         open("./model/model.pkl", "rb"))  # load the model
     # predict the values using loded model
@@ -25,10 +25,11 @@ def hasil():
         nama = request.form['name']
         sleep = request.form['sleeping-hours']
         heart = request.form['avg-hr']
+        resp = request.form['avg-rs']
 
         # text = nama + ", your city have " + sunshine + " hours of sunshine per day and " + work + " hours of work per day will make you happy."
 
-        to_predict_list = list(map(float, [sleep, heart]))
+        to_predict_list = list(map(float, [sleep, heart, resp]))
         result = ValuePredictor(to_predict_list)
         if int(result) == 1:
             prediction = nama + ', stress level kamu <b>rendah</b>. Bagus, kamu bisa bekerja dengan tenang dan produktif. Tetap semangat ya!'
