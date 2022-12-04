@@ -13,14 +13,15 @@ function showResult() {
   var name = document.getElementById("name").value;
   var sleeping = document.getElementById("sleeping-hours").value;
   var heart = document.getElementById("avg-hr").value;
-  if (name != "" && sleeping != "" && heart != "") {
+  var resp = document.getElementById("avg-rs").value;
+  if (name != "" && sleeping != "" && heart != "" && resp != "") {
     //set url and inner
     var url = "/hasil";
     //alert (url);
     var inner = "prediction_result";
     //open request
     var params =
-      "name=" + name + "&sleeping-hours=" + sleeping + "&avg-hr=" + heart;
+      "name=" + name + "&sleeping-hours=" + sleeping + "&avg-hr=" + heart + "&avg-rs=" + resp;
     document.getElementById(inner).innerHTML =
       '<lottie-player src="https://assets6.lottiefiles.com/packages/lf20_usmfx6bp.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;" loop autoplay></lottie-player>';
     xmlhttp.open("POST", url, true);
