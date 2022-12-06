@@ -1,6 +1,6 @@
 import flask
 import numpy as np
-from flask import Flask, redirect, url_for, request, render_template
+from flask import Flask, request
 import pickle
 
 app = Flask(__name__)
@@ -27,17 +27,18 @@ def hasil():
         heart = request.form['avg-hr']
         resp = request.form['avg-rs']
 
-        # text = nama + ", your city have " + sunshine + " hours of sunshine per day and " + work + " hours of work per day will make you happy."
-
         to_predict_list = list(map(float, [sleep, heart, resp]))
         result = ValuePredictor(to_predict_list)
         if int(result) == 1:
             prediction = nama + ', stress level kamu <b>rendah</b>. Bagus, kamu bisa bekerja dengan tenang dan produktif. Tetap semangat ya!'
         elif int(result) == 2:
             prediction = nama + ', stress level kamu <b>medium</b>. Kamu bisa tetap produktif dan tenang, tapi jangan lupa untuk mengambil waktu untuk diri sendiri.'
-        else:
+        elif int(result) == 0:
             prediction = nama + ', stress level kamu <b>tinggi</b>. Kamu harus lebih berhati-hati dalam menjalani kehidupan sehari-hari. Jangan lupa untuk mengambil waktu untuk diri sendiri.'
+        else :
+            prediction = 'Error'
 
         return prediction
+
 if __name__ == "__main__":
     app.run(debug=False)  # use debug = False for jupyter notebook
