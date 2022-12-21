@@ -12,11 +12,12 @@ def index():
 
 # prediction function
 def ValuePredictor(to_predict_list):
-    to_predict = np.array(to_predict_list).reshape(1, 3)
-    loaded_model = pickle.load(
-        open("./model/model.pkl", "rb"))  # load the model
+    to_predict = np.array(to_predict_list).reshape(1, 8)
+    loaded_scaler = pickle.load(open("./model/scaler.pkl", "rb"))  # load the scaler
+    loaded_model = pickle.load(open("./model/model.pkl", "rb"))  # load the model
     # predict the values using loded model
-    result = loaded_model.predict(to_predict)
+    to_predict_std = loaded_scaler.transform(to_predict)
+    result = loaded_model.predict(to_predict_std)
     return result[0]
 
 @app.route('/hasil' , methods = ['POST', 'GET'])
