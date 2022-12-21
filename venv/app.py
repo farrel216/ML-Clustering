@@ -33,7 +33,7 @@ def hasil():
         eye = request.form['eye-move']
         
 
-        to_predict_list = list(map(float, [sleep, heart, resp, snore, temp, limb, oxy, eye]))
+        to_predict_list = list(map(float, [snore,resp, temp, limb, oxy, eye, sleep, heart]))
         result = ValuePredictor(to_predict_list)
         if int(result) == 1:
             prediction = nama + ', stress level kamu <b>rendah</b>. Bagus, kamu bisa bekerja dengan tenang dan produktif. Tetap semangat ya!'
