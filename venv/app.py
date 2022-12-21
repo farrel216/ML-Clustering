@@ -36,11 +36,11 @@ def hasil():
 
         to_predict_list = list(map(float, [snore,resp, temp, limb, oxy, eye, sleep, heart]))
         result = ValuePredictor(to_predict_list)
-        if int(result) == 1:
+        if int(result) == 0:
             prediction = nama + ', stress level kamu <b>rendah</b>. Bagus, kamu bisa bekerja dengan tenang dan produktif. Tetap semangat ya!'
-        elif int(result) == 2:
+        elif int(result) == 1:
             prediction = nama + ', stress level kamu <b>medium</b>. Kamu bisa tetap produktif dan tenang, tapi jangan lupa untuk mengambil waktu untuk diri sendiri.'
-        elif int(result) == 0:
+        elif int(result) == 2:
             prediction = nama + ', stress level kamu <b>tinggi</b>. Kamu harus lebih berhati-hati dalam menjalani kehidupan sehari-hari. Jangan lupa untuk mengambil waktu untuk diri sendiri.'
         else :
             prediction = 'Error'
