@@ -26,8 +26,14 @@ def hasil():
         sleep = request.form['sleeping-hours']
         heart = request.form['avg-hr']
         resp = request.form['avg-rs']
+        snore = request.form['snoring-rate']
+        temp = request.form['body-temp']
+        limb = request.form['limb-move']
+        oxy = request.form['blood-ox']
+        eye = request.form['eye-move']
+        
 
-        to_predict_list = list(map(float, [sleep, heart, resp]))
+        to_predict_list = list(map(float, [sleep, heart, resp, snore, temp, limb, oxy, eye]))
         result = ValuePredictor(to_predict_list)
         if int(result) == 1:
             prediction = nama + ', stress level kamu <b>rendah</b>. Bagus, kamu bisa bekerja dengan tenang dan produktif. Tetap semangat ya!'
